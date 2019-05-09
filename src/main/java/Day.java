@@ -16,10 +16,11 @@ public class Day extends TimeDelay {
             if(isInterrupted()) {
                 return;
             }
-            else{
+            else if(this.degree==6){
+                this.degree=0;
                 log.info("Новый день на " + this.nameOfPlanet);
-
             }
+            else this.degree++;
 
             try {
                 sleep(this.delayDay);

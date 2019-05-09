@@ -21,6 +21,6 @@ public class Planet extends  Thread{
     void end() {
        year.interrupt();
        day.interrupt();
-       log.info("Планета перестала вращаться и двишаться вокруг солнца");
+       log.info("Планета перестала вращаться и двигаться вокруг солнца");
     }
 }

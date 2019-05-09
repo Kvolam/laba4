@@ -12,12 +12,14 @@ public class Year extends TimeDelay {
     @Override
     public void run(){
         do {
-            if(!isInterrupted()) {
-                log.info("Новый год на " + this.nameOfPlanet);
+            if(isInterrupted()) {
+               return;
             }
-            else {
-                return;
+            else if(this.degree==6){
+                log.info("Новый день на " + this.nameOfPlanet);
+                this.degree=0;
             }
+            else this.degree++;
             try {
                 sleep(this.delayYear);
             } catch (InterruptedException e) {
