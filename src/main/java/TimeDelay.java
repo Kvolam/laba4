@@ -1,10 +1,10 @@
 
 
-public class TimeDelay extends Thread {
+class TimeDelay extends Thread {
 
-    private String nameOfPlanet;
+    String nameOfPlanet;
 
-    public TimeDelay(String nameOfPlanet){
+    TimeDelay(String nameOfPlanet){
        this.nameOfPlanet=nameOfPlanet;
     }
 }
