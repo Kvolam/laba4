@@ -3,7 +3,7 @@ import org.apache.log4j.Logger;
 
 public class Day extends TimeDelay {
     private long delayDay;
-    private static final Logger log = Logger.getLogger(Day.class);
+    private final Logger log = Logger.getLogger(Day.class);
 
     Day(String nameOfPlanet,long delayDay) {
         super(nameOfPlanet);
@@ -13,12 +13,12 @@ public class Day extends TimeDelay {
     @Override
     public void run() {
         do {
-            if(Thread.interrupted()) {
-                log.info("Новый день на " + this.nameOfPlanet);
+            if(isInterrupted()) {
+                return;
             }
             else{
-                log.info("Планета остановила врашение вокруг своей оси");
-                return;
+                log.info("Новый день на " + this.nameOfPlanet);
+
             }
 
             try {

@@ -1,7 +1,7 @@
 import org.apache.log4j.Logger;
 
 public class Year extends TimeDelay {
-    private static final Logger log = Logger.getLogger(Year.class);
+    private final Logger log = Logger.getLogger(Year.class);
     private long delayYear;
 
     Year(String nameOfPlanet, long delayYear) {
@@ -12,11 +12,10 @@ public class Year extends TimeDelay {
     @Override
     public void run(){
         do {
-            if(Thread.interrupted()) {
+            if(!isInterrupted()) {
                 log.info("Новый год на " + this.nameOfPlanet);
             }
             else {
-                log.info("Планета остановила своё врашение вокруг солнца");
                 return;
             }
             try {
